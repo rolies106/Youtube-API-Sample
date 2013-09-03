@@ -1,0 +1,16 @@
+/index.php
+/protected/yiic.php
+/protected/config/main.php
+/protected/config/all-env.php
+
+/assets/
+/uploads/
+/framework/
+/protected/runtime/
+/public/
+migrate.sh
+*.DS_Store
+*Thumbs.db
+*~
+*.sublime-project
+*.sublime-workspace
