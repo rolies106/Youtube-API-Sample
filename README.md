@@ -7,7 +7,7 @@ This is demo app for how-to-use Youtube API based on Zend GData Library.
 
 ### Google developers key
 
-You can start to register your app and get your `developers_key`, `client_id`, and `client_secret` by visiting [your Google code dashboard](https://code.google.com/apis/youtube/dashboard).
+You can start to register your app and get your `developers_key`, `client_id`, and `client_secret` by visiting [your Google code dashboard](https://code.google.com/apis/console/).
 
 ## Step by step Google Auth
 
