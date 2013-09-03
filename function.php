@@ -22,6 +22,11 @@ define('DEV_KEY', 'AIzaSyDnuYpp69lokct6Sq_tU7e9QFg60Apt_uY');
 define('CLIENT_ID', '188059253473.apps.googleusercontent.com');
 define('CLIENT_SECRET', 'i8Dmah6dbY7zjJlLFUalG6RW');
 
+# if a GET variable is set then process the token upgrade
+if (isset($_GET['token'])) {
+    updateAuthSubToken($_GET['token']);
+}
+
 # Generate sub token URL
 function generateSubTokenUrl($nextUrl = null)
 {
@@ -35,6 +40,26 @@ function generateSubTokenUrl($nextUrl = null)
     $url = Zend_Gdata_AuthSub::getAuthSubTokenUri($nextUrl, GDATA_SCOPE, $secure, $session);
     
     return $url;
+}
+
+/**
+ * Upgrade the single-use token to a session token.
+ *
+ * @param string $singleUseToken A valid single use token that is upgradable to a session token.
+ * @return void
+ */
+function updateAuthSubToken($singleUseToken)
+{
+    try {
+        $sessionToken = Zend_Gdata_AuthSub::getAuthSubSessionToken($singleUseToken);
+    } catch (Zend_Gdata_App_Exception $e) {
+        print 'ERROR - Token upgrade for ' . $singleUseToken
+            . ' failed : ' . $e->getMessage();
+        return;
+    }
+
+    $_SESSION['sessionToken'] = $sessionToken;
+    header('Location: ' . HOME_URL);
 }
 
 /**
