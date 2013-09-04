@@ -21,7 +21,7 @@ First step on google Auth is get your single-use token so we can upgrade it to s
 
 ### Handle redirect URL with Token
 
-After you visit url for generate your single-use token you will be redirected back to your app (you can configure this url redirecting) along with your single-use token.
+After you visit url for generate your single-use token you will be redirected back to your app (you can configure url for handle redirect from Youtube) along with your single-use token.
 
 ### Upgrade single-use Token
 
