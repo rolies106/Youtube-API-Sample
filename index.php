@@ -27,9 +27,7 @@
             <p>
                 Sample use with current token :
 
-                <pre>
-                    Under Construction
-                </pre>
+                <pre>Under Construction</pre>
             </p>
         <?php endif; ?>
     </div>
